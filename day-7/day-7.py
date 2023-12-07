@@ -8,6 +8,9 @@ import numpy as np
 import itertools
 
 
+# %% [markdown]
+# ## Part 1
+
 # %%
 class Part_1:
     def __init__(self, filename):
