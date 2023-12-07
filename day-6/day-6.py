@@ -1,21 +1,8 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     custom_cell_magics: kql
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.11.2
-#   kernelspec:
-#     display_name: science
-#     language: python
-#     name: python3
-# ---
+# %% [markdown]
+# # AoC 2023, day 6
 
 # %% [markdown]
-# Part 1
+# ## Part 1
 
 # %%
 import numpy as np
@@ -41,13 +28,13 @@ for i in range(len(times)):
 np.prod(ways_of_winning)
 
 # %% [markdown]
-# Part 2
+# ## Part 2
 
 # %% [markdown]
-# To make it more efficient, now we find the zeros of the function $X(a) - D$, where $D$ is the record distance from the race (using e.g., bisection method). We should expect two zeros, say at the values $a_0$ and $a_1$. Then, the number of ways of winning is the number of integers in the interval $[a_0,a_1]$, i.e.,
+# To make it more efficient, now we find the zeros of the function $f(a) = X(a) - D = aT - a^2 - D$, where $D$ is the record distance from the race (using e.g., bisection method). We should expect two zeros, say at the values $a_0$ and $a_1$. Then, the number of ways of winning is the number of integers in the interval $[a_0,a_1]$, i.e.,
 # $$ \lfloor a_1 \rfloor - \lceil a_0 \rceil + 1. $$
 #
-# Two find these two zeros, we perform the bisection method on the intervals $[0,T/2]$ and $[T/2, T]$.
+# To find these two zeros, we perform the bisection method on the intervals $[0,T/2]$ and $[T/2, T]$.
 
 # %%
 T = int(''.join(lines[0].split()[1:]))
@@ -64,8 +51,7 @@ def bisection(f, a, b, tol=1e-4):
         return (a+b)/2
     if fa*fm <= 0:
         return bisection(f, a, m, tol)
-    else:
-        return bisection(f, m, b, tol)
+    return bisection(f, m, b, tol)
 
 
 
@@ -77,4 +63,4 @@ print(f" a0 = {a0}, f(a0) = {f(a0)}")
 print(f" a1 = {a1}, f(a1) = {f(a1)}")
 
 # %%
-np.floor(a1) - np.ceil(a0) + 1
+print(int(np.floor(a1) - np.ceil(a0) + 1))

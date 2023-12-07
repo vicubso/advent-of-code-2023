@@ -1,21 +1,8 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     custom_cell_magics: kql
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.11.2
-#   kernelspec:
-#     display_name: science
-#     language: python
-#     name: python3
-# ---
+# %% [markdown]
+# # AoC 2023, day 5
 
 # %% [markdown]
-# Part 1
+# ## Part 1
 
 # %%
 import numpy as np
@@ -63,7 +50,7 @@ locations = [source_to_destination_multiple_maps(seed,maps) for seed in seeds]
 min(locations)
 
 # %% [markdown]
-# Part 2
+# ## Part 2
 
 # %%
 seed_ranges = seeds.reshape([-1,2])

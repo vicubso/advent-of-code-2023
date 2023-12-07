@@ -1,21 +1,8 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     custom_cell_magics: kql
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.11.2
-#   kernelspec:
-#     display_name: science
-#     language: python
-#     name: python3
-# ---
+# %% [markdown]
+# # AoC 2023, day 4
 
 # %% [markdown]
-# Part 1
+# ## Part 1
 
 # %%
 input = []
@@ -35,7 +22,7 @@ for l in input:
 prize
 
 # %% [markdown]
-# Part 2
+# # Part 2
 
 # %%
 import numpy as np
